@@ -34,4 +34,4 @@ Follow the steps below to compile and run the Byteshell project:
 6. You should now see the Byteshell prompt (`<<Custom Byteshell June 2023>>`) indicating that the shell is running.
 7. Now you can write your own commands and use this shell.
 
-#Recieved guidance and motivation from ACM IIT Roorkee for the completion of this project. 
+## Recieved guidance and motivation from ACM IIT Roorkee for the completion of this project. 
