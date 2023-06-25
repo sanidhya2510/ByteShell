@@ -5,8 +5,9 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 #include<string.h>
+#include<fcntl.h>
 
-
+int rmCommand(char **command); //function to delete files
 int headCommand(char **command);//function to display first 10 lines of a file
 int makeNewDirectory(char **command);// function to create a directory
 int makeNewFile(char **command); // function to create a new file
@@ -22,6 +23,18 @@ int launchCLI(char **command);
 //parsing functions
 char** splitLine(char *inputLine);
 char* readLine();
+
+int rmCommand(char **command){
+   if(command[1] == NULL) fprintf(stderr, "Some Argument expected to \"rm\" \n"); 
+   else{
+    int temp = open(command[1], O_RDONLY);
+    if(temp!=-1){
+        close(temp);
+        unlink(command[1]);
+    }
+    else perror(command[1]);
+   }
+}
 
 int headCommand(char **command){
 
@@ -112,11 +125,11 @@ int exitCLI(char **command)
 
 int helpCLI(char **command)
 {
-  char *builtin_string[] = { "cd", "help", "history", "exit", "echo", "pwd", "mkdir", "touch", "head"};
+  char *allCommands[] = { "cd", "help", "history", "exit", "echo", "pwd", "mkdir", "touch", "head", "rm"};
   int i;
   printf("<<ByteShell Project by Sanidhya>>\n");
   printf("The following Commands are Supported Builtin: \n");
-  for (i = 0; i < sizeof(builtin_string) / sizeof(char *); i++)printf("  %s\n", builtin_string[i]);
+  for (i = 0; i < sizeof(allCommands) / sizeof(char *); i++)printf("  %s\n", allCommands[i]);
   return 1;
 }
 
