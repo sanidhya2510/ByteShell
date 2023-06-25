@@ -14,13 +14,14 @@ BuiltinFunction func[] =
         &presentWorkingDirectory,
         &makeNewDirectory,
         &makeNewFile,
-        &headCommand
+        &headCommand,
+        &rmCommand
     };
 
 int executeCLI(char **command)
 {
     
-    char* allCommands[] = {"cd", "help","history","exit","echo", "pwd", "mkdir", "touch", "head"};
+    char* allCommands[] = {"cd", "help","history","exit","echo", "pwd", "mkdir", "touch", "head", "rm"};
     if(command[0] == NULL)
     {
         return 1;
