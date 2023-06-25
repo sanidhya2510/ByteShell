@@ -1,7 +1,7 @@
 # ByteShell
 
 ## Introduction
-Welcome to the Byteshell project! This project is a command-line utility written in C that provides a simple shell environment with various functions implemented, including `cd`, `help`, `exit`, `history`, `pwd`, `echo`, `mkdir`, `touch`, `head`. This project aims to demonstrate basic shell functionalities and serve as a starting point for building more advanced shell applications.
+Welcome to the Byteshell project! This project is a command-line utility written in C that provides a simple shell environment with various functions implemented, including `cd`, `help`, `exit`, `history`, `pwd`, `echo`, `mkdir`, `touch`, `head`, `rm`. This project aims to demonstrate basic shell functionalities and serve as a starting point for building more advanced shell applications.
 
 ## Features
 The Byteshell project provides the following features:
@@ -15,6 +15,7 @@ The Byteshell project provides the following features:
 - **mkdir**: Create a new Directory in the Present working Directory
 - **touch**: Create a new file in the Present working Directory
 - **head**: Print first 10 lines of the given Input file
+- **rm**: Removes a file from the Present Working Directory
 
 ## Requirements
 To compile and run the Byteshell project, you need the following:
